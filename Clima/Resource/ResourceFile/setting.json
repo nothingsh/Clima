@@ -1,0 +1,8 @@
+{
+    "temperature_type": "fahrenheit",
+    "units": "imperial",
+    "language": "English",
+    "sound": true,
+    "vibration": true,
+    "appStyle": "clear"
+}
