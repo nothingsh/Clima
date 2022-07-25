@@ -53,7 +53,7 @@ struct AppColorStyleHex: Codable {
     static var defaultColorHex: AppColorStyleHex = {
         return AppColorStyleHex(
             textHex: "FFFFFF",
-            iconHex: "4400B2",
+            iconHex: "0096FF",
             backgroundHex: "9ADCFF",
             shadowHex: "42C2FF",
             hfBackgroundHex: "42C2FF",

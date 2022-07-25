@@ -65,7 +65,7 @@ fileprivate struct CloudsAndHumidityView: UIViewRepresentable {
                 ])
         chartView.aa_drawChartWithChartModel(chartModel)
         chartView.isClearBackgroundColor = true
-        chartView.scrollEnabled = false
+        chartView.isScrollEnabled = false
         return chartView
     }
     

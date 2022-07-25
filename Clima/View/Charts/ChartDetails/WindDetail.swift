@@ -1,5 +1,5 @@
 //
-//  UltravioletIndex.swift
+//  WindDetail.swift
 //  Clima
 //
 //  Created by Steven Zhang on 3/23/21.
@@ -8,16 +8,28 @@
 import SwiftUI
 import AAInfographics
 
-struct UltravioletIndex: View {
+struct WindDetail: View {
     @EnvironmentObject var viewModel: RegionWeatherViewModel
     
     var body: some View {
-        UltravioletIndexView(index: UVI(), category: Category())
+        WindDetailView(wind_speed: WindSpeed(), wind_gust: WindGust(), wind_deg: WindDeg(), category: Category())
     }
     
-    private func UVI() -> [Double] {
+    private func WindSpeed() -> [Double] {
         return viewModel.region.weather?.daily.map {
-            return $0.uvi
+            return $0.wind_speed
+        } ?? []
+    }
+    
+    private func WindGust() -> [Double] {
+        return viewModel.region.weather?.daily.map {
+            return $0.wind_gust ?? 0
+        } ?? []
+    }
+    
+    private func WindDeg() -> [Double] {
+        return viewModel.region.weather?.daily.map {
+            return $0.wind_deg
         } ?? []
     }
     
@@ -28,31 +40,35 @@ struct UltravioletIndex: View {
     }
 }
 
-fileprivate struct UltravioletIndexView: UIViewRepresentable {
-    var index: [Double]
+fileprivate struct WindDetailView: UIViewRepresentable {
+    var wind_speed: [Double]
+    var wind_gust: [Double]
+    var wind_deg: [Double]
     var category: [String]
     
     func makeUIView(context: Context) -> some UIView {
         let chartView = AAChartView(frame: UIScreen.main.bounds)
+        
         let chartModel = AAChartModel()
             .backgroundColor(AAColor.clear)
-            .title("ULtraviolet Index")
-            .chartType(.area)
+            .chartType(.line)
             .animationType(.bounce)
+            .title("Wind")
             .dataLabelsEnabled(false)
+            .tooltipValueSuffix(AppSetting.shared.content.units.length)
             .categories(category)
-            .colorsTheme(["#d11b5f","#facd32","#ffffa0","#EA007B"])
+            .colorsTheme(["#ffffa0","#EA007B"])
             .series([
                 AASeriesElement()
-                    .name("ULtraviolet Index")
-                    .data(index)
-                    .step(true)
+                    .name("Wind Speed")
+                    .data(wind_speed),
+                AASeriesElement()
+                    .name("Wind Gust")
+                    .data(wind_gust)
             ])
-        
         chartView.aa_drawChartWithChartModel(chartModel)
-        chartView.scrollEnabled = false
         chartView.isClearBackgroundColor = true
-        
+        chartView.isScrollEnabled  = false
         return chartView
     }
     
@@ -61,9 +77,9 @@ fileprivate struct UltravioletIndexView: UIViewRepresentable {
     }
 }
 
-struct UltravioletIndex_Previews: PreviewProvider {
+struct WindDetail_Previews: PreviewProvider {
     static var previews: some View {
-        UltravioletIndex()
+        WindDetail()
             .environmentObject(RegionWeatherViewModel())
     }
 }

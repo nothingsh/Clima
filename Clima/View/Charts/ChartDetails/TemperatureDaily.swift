@@ -129,7 +129,7 @@ fileprivate struct TemperatureDailyView: UIViewRepresentable {
         
         chartView.aa_drawChartWithChartModel(chartModel)
         chartView.isClearBackgroundColor = true
-        chartView.scrollEnabled = false
+        chartView.isScrollEnabled = false
         return chartView
     }
     
@@ -166,7 +166,7 @@ fileprivate struct MaxAndMin: UIViewRepresentable {
                 ])
         chartView.aa_drawChartWithChartModel(chartModel)
         chartView.isClearBackgroundColor = true
-        chartView.scrollEnabled = false
+        chartView.isScrollEnabled = false
         return chartView
     }
     

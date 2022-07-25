@@ -91,7 +91,7 @@ struct DailyCard: View {
     
     private func attentionColor() -> Color {
         if emergencies.count == 0 {
-            return .green
+            return Color(hex: "00FFDD")
         } else if emergencies.contains(where: { $0.type == .emergency }) {
             return Color.red
         } else {

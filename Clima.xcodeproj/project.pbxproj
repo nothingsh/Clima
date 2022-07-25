@@ -26,6 +26,7 @@
 		773B70B225F5FAD20004B675 /* WeatherContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773B70B125F5FAD20004B675 /* WeatherContentView.swift */; };
 		77646DCC27BA7E2C00963D7D /* HourlyChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77646DCB27BA7E2C00963D7D /* HourlyChartView.swift */; };
 		77646DCE27BA7E3700963D7D /* DailyChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77646DCD27BA7E3700963D7D /* DailyChartView.swift */; };
+		776D948E288EDCD50029C783 /* AAInfographics in Frameworks */ = {isa = PBXBuildFile; productRef = 776D948D288EDCD50029C783 /* AAInfographics */; };
 		7774B04A25FD188200D60F33 /* RoundCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7774B04925FD188200D60F33 /* RoundCorner.swift */; };
 		7774B04D25FD18B600D60F33 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7774B04C25FD18B600D60F33 /* Extensions.swift */; };
 		7774B05025FD18E500D60F33 /* EffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7774B04F25FD18E500D60F33 /* EffectView.swift */; };
@@ -44,7 +45,6 @@
 		779668992600529F0079FE62 /* IndexPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779668982600529F0079FE62 /* IndexPanel.swift */; };
 		779668A32600D74A0079FE62 /* ClimaUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779668A22600D74A0079FE62 /* ClimaUtils.swift */; };
 		77A0E44527E99D5A00014BFD /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A0E44427E99D5A00014BFD /* Coordinate.swift */; };
-		77A1C04E27E7392A0030F008 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 77A1C04D27E7392A0030F008 /* Charts */; };
 		77A1C05027E7647E0030F008 /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A1C04F27E7647E0030F008 /* AppStyle.swift */; };
 		77B32B2D27E98A0A00AC3585 /* AppSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B32B2C27E98A0A00AC3585 /* AppSetting.swift */; };
 		77B92AAE2601D23C0072A81F /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 77B92AAD2601D23C0072A81F /* cities.json */; };
@@ -58,7 +58,6 @@
 		77D8B37725F3B8F6006347DE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D8B37625F3B8F6006347DE /* ContentView.swift */; };
 		77D8B37925F3B8F9006347DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77D8B37825F3B8F9006347DE /* Assets.xcassets */; };
 		77D8B37C25F3B8F9006347DE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77D8B37B25F3B8F9006347DE /* Preview Assets.xcassets */; };
-		77DFB37E26088E3300886A0F /* AAInfographics in Frameworks */ = {isa = PBXBuildFile; productRef = 77DFB37D26088E3300886A0F /* AAInfographics */; };
 		77DFB38A2608C03900886A0F /* TemperatureHourly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DFB3892608C03900886A0F /* TemperatureHourly.swift */; };
 		77DFB38E2608D36400886A0F /* TemperatureDaily.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DFB38D2608D36300886A0F /* TemperatureDaily.swift */; };
 		77DFB3912608E08300886A0F /* CloudsAndHumidity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DFB3902608E08300886A0F /* CloudsAndHumidity.swift */; };
@@ -150,8 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				777A82892604AAF000F7F497 /* Lottie in Frameworks */,
-				77A1C04E27E7392A0030F008 /* Charts in Frameworks */,
-				77DFB37E26088E3300886A0F /* AAInfographics in Frameworks */,
+				776D948E288EDCD50029C783 /* AAInfographics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,14 +166,6 @@
 			path = Charts;
 			sourceTree = "<group>";
 		};
-		77281532263CF5FA00FA5B72 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				77D8B37625F3B8F6006347DE /* ContentView.swift */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
 		773941B625F867FD000E1248 /* FloatingPanel */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,10 +177,10 @@
 			path = FloatingPanel;
 			sourceTree = "<group>";
 		};
-		773B708325F47E120004B675 /* Views */ = {
+		773B708325F47E120004B675 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				77281532263CF5FA00FA5B72 /* Main */,
+				77D8B37625F3B8F6006347DE /* ContentView.swift */,
 				773B709F25F49BF40004B675 /* Weather */,
 				773B708F25F490EC0004B675 /* Map */,
 				77FCE310260B04AC0060962D /* Setting */,
@@ -199,7 +189,7 @@
 				773941B625F867FD000E1248 /* FloatingPanel */,
 				7774B06325FDE39100D60F33 /* Helper */,
 			);
-			path = Views;
+			path = View;
 			sourceTree = "<group>";
 		};
 		773B708425F47E700004B675 /* Localization */ = {
@@ -377,7 +367,7 @@
 			isa = PBXGroup;
 			children = (
 				77C0427125F64DCB00FA30FF /* Setting */,
-				773B708325F47E120004B675 /* Views */,
+				773B708325F47E120004B675 /* View */,
 				773B709725F4990D0004B675 /* ViewModel */,
 				773B708725F47EC10004B675 /* Model */,
 				773B708925F484AB0004B675 /* WebService */,
@@ -448,8 +438,7 @@
 			name = Clima;
 			packageProductDependencies = (
 				777A82882604AAF000F7F497 /* Lottie */,
-				77DFB37D26088E3300886A0F /* AAInfographics */,
-				77A1C04D27E7392A0030F008 /* Charts */,
+				776D948D288EDCD50029C783 /* AAInfographics */,
 			);
 			productName = Clima;
 			productReference = 77D8B37125F3B8F6006347DE /* Clima.app */;
@@ -480,8 +469,7 @@
 			mainGroup = 77D8B36825F3B8F6006347DE;
 			packageReferences = (
 				777A82872604AAF000F7F497 /* XCRemoteSwiftPackageReference "lottie-ios" */,
-				77DFB37C26088E3300886A0F /* XCRemoteSwiftPackageReference "AAChartKit-Swift" */,
-				77A1C04C27E7392A0030F008 /* XCRemoteSwiftPackageReference "Charts" */,
+				776D948C288EDCD50029C783 /* XCRemoteSwiftPackageReference "AAChartKit-Swift" */,
 			);
 			productRefGroup = 77D8B37225F3B8F6006347DE /* Products */;
 			projectDirPath = "";
@@ -764,6 +752,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		776D948C288EDCD50029C783 /* XCRemoteSwiftPackageReference "AAChartKit-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AAChartModel/AAChartKit-Swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		777A82872604AAF000F7F497 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
@@ -772,39 +768,18 @@
 				minimumVersion = 3.2.1;
 			};
 		};
-		77A1C04C27E7392A0030F008 /* XCRemoteSwiftPackageReference "Charts" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/danielgindi/Charts.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		77DFB37C26088E3300886A0F /* XCRemoteSwiftPackageReference "AAChartKit-Swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/AAChartModel/AAChartKit-Swift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		776D948D288EDCD50029C783 /* AAInfographics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 776D948C288EDCD50029C783 /* XCRemoteSwiftPackageReference "AAChartKit-Swift" */;
+			productName = AAInfographics;
+		};
 		777A82882604AAF000F7F497 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 777A82872604AAF000F7F497 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
-		};
-		77A1C04D27E7392A0030F008 /* Charts */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 77A1C04C27E7392A0030F008 /* XCRemoteSwiftPackageReference "Charts" */;
-			productName = Charts;
-		};
-		77DFB37D26088E3300886A0F /* AAInfographics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 77DFB37C26088E3300886A0F /* XCRemoteSwiftPackageReference "AAChartKit-Swift" */;
-			productName = AAInfographics;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

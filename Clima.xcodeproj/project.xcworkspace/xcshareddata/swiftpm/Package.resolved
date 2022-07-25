@@ -1,52 +1,23 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "AAInfographics",
-        "repositoryURL": "https://github.com/AAChartModel/AAChartKit-Swift.git",
-        "state": {
-          "branch": null,
-          "revision": "9be1dcdf92c5b9ed9e2b83f4dd9fbd801e40e1ce",
-          "version": "6.0.0"
-        }
-      },
-      {
-        "package": "Charts",
-        "repositoryURL": "https://github.com/danielgindi/Charts.git",
-        "state": {
-          "branch": "master",
-          "revision": "b61fc9b97829ab9b954d01f96e601d52045ef5dc",
-          "version": null
-        }
-      },
-      {
-        "package": "Lottie",
-        "repositoryURL": "https://github.com/airbnb/lottie-ios.git",
-        "state": {
-          "branch": null,
-          "revision": "b3c60ba1716baab6faeeb217d8ce1da336f92718",
-          "version": "3.2.1"
-        }
-      },
-      {
-        "package": "swift-algorithms",
-        "repositoryURL": "https://github.com/apple/swift-algorithms",
-        "state": {
-          "branch": null,
-          "revision": "b14b7f4c528c942f121c8b860b9410b2bf57825e",
-          "version": "1.0.0"
-        }
-      },
-      {
-        "package": "swift-numerics",
-        "repositoryURL": "https://github.com/apple/swift-numerics",
-        "state": {
-          "branch": null,
-          "revision": "0a5bc04095a675662cf24757cc0640aa2204253b",
-          "version": "1.0.2"
-        }
+  "pins" : [
+    {
+      "identity" : "aachartkit-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AAChartModel/AAChartKit-Swift.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "333cabf14360dc5faebbd6390c6120f47bbd998c"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "lottie-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/airbnb/lottie-ios.git",
+      "state" : {
+        "revision" : "b3c60ba1716baab6faeeb217d8ce1da336f92718",
+        "version" : "3.2.1"
+      }
+    }
+  ],
+  "version" : 2
 }

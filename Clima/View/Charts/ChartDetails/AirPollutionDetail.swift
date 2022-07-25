@@ -65,7 +65,7 @@ fileprivate struct AirPollutionView: UIViewRepresentable {
             ])
         
         chartView.aa_drawChartWithChartModel(chartModel)
-        chartView.scrollEnabled = false
+        chartView.isScrollEnabled = false
         chartView.isClearBackgroundColor = true
         
         return chartView

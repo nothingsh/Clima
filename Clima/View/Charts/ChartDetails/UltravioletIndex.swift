@@ -1,5 +1,5 @@
 //
-//  RainAndSnow.swift
+//  UltravioletIndex.swift
 //  Clima
 //
 //  Created by Steven Zhang on 3/23/21.
@@ -8,22 +8,16 @@
 import SwiftUI
 import AAInfographics
 
-struct RainAndSnow: View {
+struct UltravioletIndex: View {
     @EnvironmentObject var viewModel: RegionWeatherViewModel
     
     var body: some View {
-        RainAndSnowView(category: Category(), rain: Rain(), snow: Snow())
+        UltravioletIndexView(index: UVI(), category: Category())
     }
     
-    private func Rain() -> [Double] {
+    private func UVI() -> [Double] {
         return viewModel.region.weather?.daily.map {
-            return ($0.rain ?? 0)
-        } ?? []
-    }
-    
-    private func Snow() -> [Double] {
-        return viewModel.region.weather?.daily.map {
-            return ($0.snow ?? 0)
+            return $0.uvi
         } ?? []
     }
     
@@ -34,34 +28,31 @@ struct RainAndSnow: View {
     }
 }
 
-fileprivate struct RainAndSnowView: UIViewRepresentable {
+fileprivate struct UltravioletIndexView: UIViewRepresentable {
+    var index: [Double]
     var category: [String]
-    var rain: [Double]
-    var snow: [Double]
     
     func makeUIView(context: Context) -> some UIView {
         let chartView = AAChartView(frame: UIScreen.main.bounds)
-        
         let chartModel = AAChartModel()
             .backgroundColor(AAColor.clear)
-            .chartType(.column)
+            .title("ULtraviolet Index")
+            .chartType(.area)
             .animationType(.bounce)
-            .title("Rain And Snow")
             .dataLabelsEnabled(false)
-            .tooltipValueSuffix("mm")
             .categories(category)
-            .colorsTheme(["#0c9674","#7dffc0","#d11b5f","#facd32","#ffffa0","#EA007B"])
+            .colorsTheme(["#d11b5f","#facd32","#ffffa0","#EA007B"])
             .series([
                 AASeriesElement()
-                    .name("Rain")
-                    .data(rain),
-                AASeriesElement()
-                    .name("Snow")
-                    .data(snow)
+                    .name("ULtraviolet Index")
+                    .data(index)
+                    .step(true)
             ])
+        
         chartView.aa_drawChartWithChartModel(chartModel)
+        chartView.isScrollEnabled = false
         chartView.isClearBackgroundColor = true
-        chartView.scrollEnabled  = false
+        
         return chartView
     }
     
@@ -70,9 +61,9 @@ fileprivate struct RainAndSnowView: UIViewRepresentable {
     }
 }
 
-struct RainAndSnow_Previews: PreviewProvider {
+struct UltravioletIndex_Previews: PreviewProvider {
     static var previews: some View {
-        RainAndSnow()
+        UltravioletIndex()
             .environmentObject(RegionWeatherViewModel())
     }
 }

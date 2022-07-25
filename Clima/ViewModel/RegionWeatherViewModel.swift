@@ -25,16 +25,16 @@ class RegionWeatherViewModel: ObservableObject {
         
         region = Region(name: city, weather: nil, coordinate: coordinate, airpollution: nil)
         
-        // refetch weather data
-        WeatherDataService.shared.currentRegionDataFetch(coordinate: region.coordinate?.cllCoordinate, completionHandlerResult: { data in
-            self.region.weather = data
-            self.region.weather?.timeLocalization()
-        })
-
-        // fetch air pollution data
-        WeatherDataService.shared.airPollutionDataFetch(by: region.coordinate?.cllCoordinate, completionHandlerResult: { data in
-            self.region.airpollution = data
-        })
+//        // refetch weather data
+//        WeatherDataService.shared.currentRegionDataFetch(coordinate: region.coordinate?.cllCoordinate, completionHandlerResult: { data in
+//            self.region.weather = data
+//            self.region.weather?.timeLocalization()
+//        })
+//
+//        // fetch air pollution data
+//        WeatherDataService.shared.airPollutionDataFetch(by: region.coordinate?.cllCoordinate, completionHandlerResult: { data in
+//            self.region.airpollution = data
+//        })
     }
     
     

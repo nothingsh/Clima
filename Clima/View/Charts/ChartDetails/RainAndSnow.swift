@@ -1,5 +1,5 @@
 //
-//  Pressure.swift
+//  RainAndSnow.swift
 //  Clima
 //
 //  Created by Steven Zhang on 3/23/21.
@@ -8,16 +8,22 @@
 import SwiftUI
 import AAInfographics
 
-struct Pressure: View {
+struct RainAndSnow: View {
     @EnvironmentObject var viewModel: RegionWeatherViewModel
     
     var body: some View {
-        PressureView(pressure: Pressures(), category: Category())
+        RainAndSnowView(category: Category(), rain: Rain(), snow: Snow())
     }
     
-    private func Pressures() -> [Double] {
+    private func Rain() -> [Double] {
         return viewModel.region.weather?.daily.map {
-            return $0.pressure
+            return ($0.rain ?? 0)
+        } ?? []
+    }
+    
+    private func Snow() -> [Double] {
+        return viewModel.region.weather?.daily.map {
+            return ($0.snow ?? 0)
         } ?? []
     }
     
@@ -28,9 +34,10 @@ struct Pressure: View {
     }
 }
 
-fileprivate struct PressureView: UIViewRepresentable {
-    var pressure: [Double]
+fileprivate struct RainAndSnowView: UIViewRepresentable {
     var category: [String]
+    var rain: [Double]
+    var snow: [Double]
     
     func makeUIView(context: Context) -> some UIView {
         let chartView = AAChartView(frame: UIScreen.main.bounds)
@@ -39,19 +46,22 @@ fileprivate struct PressureView: UIViewRepresentable {
             .backgroundColor(AAColor.clear)
             .chartType(.column)
             .animationType(.bounce)
-            .title("Pressure")
+            .title("Rain And Snow")
             .dataLabelsEnabled(false)
-            .tooltipValueSuffix("hPa")
+            .tooltipValueSuffix("mm")
             .categories(category)
-            .colorsTheme(["#ffffa0","#EA007B"])
+            .colorsTheme(["#0c9674","#7dffc0","#d11b5f","#facd32","#ffffa0","#EA007B"])
             .series([
                 AASeriesElement()
-                    .name("Pressure")
-                    .data(pressure),
+                    .name("Rain")
+                    .data(rain),
+                AASeriesElement()
+                    .name("Snow")
+                    .data(snow)
             ])
         chartView.aa_drawChartWithChartModel(chartModel)
         chartView.isClearBackgroundColor = true
-        chartView.scrollEnabled  = false
+        chartView.isScrollEnabled  = false
         return chartView
     }
     
@@ -60,9 +70,9 @@ fileprivate struct PressureView: UIViewRepresentable {
     }
 }
 
-struct Pressure_Previews: PreviewProvider {
+struct RainAndSnow_Previews: PreviewProvider {
     static var previews: some View {
-        Pressure()
+        RainAndSnow()
             .environmentObject(RegionWeatherViewModel())
     }
 }
