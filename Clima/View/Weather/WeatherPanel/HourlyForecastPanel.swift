@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HourlyForecastPanel: View {
+    @EnvironmentObject var viewModel: RegionWeatherViewModel
     var data: [HourlyForecastData]
     
     var body: some View {
@@ -18,6 +19,7 @@ struct HourlyForecastPanel: View {
                 Spacer()
                 NavigationLink {
                     HourlyChartView()
+                        .environmentObject(viewModel)
                 } label: {
                     Image(systemName: "chart.bar")
                 }

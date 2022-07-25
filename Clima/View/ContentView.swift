@@ -19,7 +19,11 @@ struct ContentView: View {
         ZStack {
             AppSetting.shared.colorStyle.backgroundColor
                 .edgesIgnoringSafeArea(.all)
-            NavigationLink(destination: MapViewPage(), isActive: $activiteMap, label: { EmptyView() })
+            NavigationLink(
+                destination: MapViewPage().environmentObject(viewModel),
+                isActive: $activiteMap,
+                label: { EmptyView() }
+            )
             VStack(spacing: 0) {
                 ContentHeaderView(seachingBar: $searchingView, floatingMenu: $activiteMap)
                 WeatherContentView(searchingBar: $searchingView)

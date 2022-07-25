@@ -19,6 +19,7 @@ struct DailyForecastPanel: View {
                 Spacer()
                 NavigationLink {
                     DailyChartView()
+                        .environmentObject(viewModel)
                 } label: {
                     Image(systemName: "chart.bar")
                 }
