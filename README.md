@@ -2,9 +2,11 @@
 
 <img src="https://img.shields.io/badge/PLATFORM-IOS%20-lightgray?style=for-the-badge" />&nbsp;&nbsp;&nbsp;<img src="https://img.shields.io/badge/LICENSE-MIT-lightgray?style=for-the-badge" />&nbsp;&nbsp;&nbsp;<img src="https://img.shields.io/badge/MADE WITH-SWIFTUI-orange?style=for-the-badge" />
 
+<p float="left">
 <img src="Previews/weather.png" alt="Preview Image" width="200"/>
 <img src="Previews/air.png" alt="Preview Image" width="200"/>
 <img src="Previews/data.png" alt="Preview Image" width="200"/>
+</p>
 
 ---
 
@@ -19,10 +21,6 @@ then the app will fetch weather data with your API key
 Clima still have many unfinished functionalities. i.e. map is presented with testing data, etc.
 
 Bugs may exist and need further improvement。
-
-
-<br/>
-
 
 
 ### Credits
